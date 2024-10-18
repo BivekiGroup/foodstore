@@ -9,7 +9,6 @@ async function getData() {
 }
 
 export default async function Hero() {
-
   const data = await getData();
   const categories = [
     { href: "/Meat", label: "Фермерская мясная продукция" },
@@ -23,8 +22,8 @@ export default async function Hero() {
     { href: "/Drinks", label: "Напитки" },
     { href: "/Vegetables", label: "Овощи" },
     { href: "/Fruits", label: "Фрукты" },
-    { href: "/Textile", label: "Текстиль" },
-  ];  
+    { href: "/Textile", label: "Эксклюзив из рыбы" },
+  ];
 
   return (
     <section className="mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8">
@@ -68,10 +67,19 @@ export default async function Hero() {
       </h2>
       <div className="flex items-center justify-between">
         <div className="flex mb-5 w-full flex-col gap-8">
-          {Array.from({length: 4}, (_, index) => (
-            <div key={index} className="flex h-24 divide-x overflow-hidden rounded-lg border">
+          {Array.from({ length: 4 }, (_, index) => (
+            <div
+              key={index}
+              className="flex h-24 divide-x overflow-hidden rounded-lg border"
+            >
               {categories.slice(index * 3, index * 3 + 3).map((category) => (
-                <Link key={category.href} href={category.href} className="flex flex-1 items-center text-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200">{category.label}</Link>
+                <Link
+                  key={category.href}
+                  href={category.href}
+                  className="flex flex-1 items-center text-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                >
+                  {category.label}
+                </Link>
               ))}
             </div>
           ))}
