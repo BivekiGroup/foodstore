@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { client, urlFor } from "../lib/sanity";
-import Link from "next/link";
+import Image from 'next/image';
+import { client, urlFor } from '../lib/sanity';
+import Link from 'next/link';
 
 async function getData() {
   const query = "*[_type == 'hero'][0]";
@@ -11,18 +11,18 @@ async function getData() {
 export default async function Hero() {
   const data = await getData();
   const categories = [
-    { href: "/Meat", label: "Фермерская мясная продукция" },
-    { href: "/Nuts-dried-fruits", label: "Орехи и сухофрукты" },
-    { href: "/Dried-fish", label: "Вяленая рыба" },
-    { href: "/Grocery", label: "Бакалея" },
-    { href: "/Sweets", label: "Сладости" },
-    { href: "/Cheese-butter", label: "Сыр и сливочное масло" },
-    { href: "/Canned", label: "Фермерская консервация" },
-    { href: "/Belarus-products", label: "Белорусские продукты" },
-    { href: "/Drinks", label: "Напитки" },
-    { href: "/Vegetables", label: "Овощи" },
-    { href: "/Fruits", label: "Фрукты" },
-    { href: "/Textile", label: "Эксклюзив из рыбы" },
+    { href: '/Meat', label: 'Фермерская мясная продукция' },
+    { href: '/Nuts-dried-fruits', label: 'Орехи и сухофрукты' },
+    { href: '/Dried-fish', label: 'Вяленая рыба' },
+    { href: '/Grocery', label: 'Бакалея' },
+    { href: '/Sweets', label: 'Сладости' },
+    { href: '/Cheese-butter', label: 'Сыр и сливочное масло' },
+    { href: '/Canned', label: 'Фермерские полуфабрикаты' },
+    { href: '/Belarus-products', label: 'Белорусские продукты' },
+    { href: '/Drinks', label: 'Напитки' },
+    { href: '/Vegetables', label: 'Овощи' },
+    { href: '/Fruits', label: 'Фрукты' },
+    { href: '/Textile', label: 'Эксклюзив из рыбы' },
   ];
 
   return (
