@@ -22,6 +22,6 @@ pnpm-debug.log*
 Dockerfile
 docker-compose.yml
 
-# Sanity Studio local data/cache
-sanity/node_modules
+# Sanity Studio (built separately)
+sanity
 .DS_Store

@@ -1,8 +1,7 @@
 # Multi-stage Dockerfile for Next.js (Node 20)
 FROM node:20-alpine AS base
 WORKDIR /app
-ENV NODE_ENV=production \
-    NEXT_TELEMETRY_DISABLED=1 \
+ENV NEXT_TELEMETRY_DISABLED=1 \
     PORT=3018
 
 # Install system deps required by some Node binaries on Alpine
@@ -12,7 +11,7 @@ RUN apk add --no-cache libc6-compat
 FROM base AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm install --force
+RUN npm ci --force
 
 # Build the app
 FROM base AS builder
@@ -32,6 +31,9 @@ RUN npm ci --omit=dev
 # Copy built assets
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/next.config.mjs ./next.config.mjs
+
+# Set production env for runtime
+ENV NODE_ENV=production
 
 EXPOSE 3018
 # Ensure Next.js binds to 0.0.0.0 and port 3018
