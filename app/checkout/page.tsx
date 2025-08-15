@@ -4,7 +4,7 @@ import { useShoppingCart } from 'use-shopping-cart';
 import { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 
 const cities = [
   'Кинешма',

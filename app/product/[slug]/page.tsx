@@ -1,7 +1,7 @@
-import AddToBag from "@/app/components/AddToBag";
-import ImageGallery from "@/app/components/ImageGallery";
-import { fullProduct } from "@/app/interface";
-import { client } from "@/app/lib/sanity";
+import AddToBag from "../../components/AddToBag";
+import ImageGallery from "../../components/ImageGallery";
+import { fullProduct } from "../../interface";
+import { client } from "../../lib/sanity";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
