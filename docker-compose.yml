@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    container_name: foodstore-web
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      - PORT=3018
+    ports:
+      - "3018:3018"
+    restart: unless-stopped
+    # If you want faster local edits in dev, uncomment the volume below
+    # volumes:
+    #   - .:/app
+
