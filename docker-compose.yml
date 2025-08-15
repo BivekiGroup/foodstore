@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   web:
     build: .
@@ -14,4 +12,3 @@ services:
     # If you want faster local edits in dev, uncomment the volume below
     # volumes:
     #   - .:/app
-
