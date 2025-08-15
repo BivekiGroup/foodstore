@@ -31,9 +31,8 @@ RUN npm ci --omit=dev
 
 # Copy built assets
 COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.mjs ./next.config.mjs
 
 EXPOSE 3018
-CMD ["npm", "start"]
-
+# Ensure Next.js binds to 0.0.0.0 and port 3018
+CMD ["npm", "run", "start", "--", "-p", "3018", "-H", "0.0.0.0"]
