@@ -21,6 +21,7 @@
     "next-sanity": "^9.0.6",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
+    "styled-components": "^6.1.19",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "use-shopping-cart": "^3.2.0"
