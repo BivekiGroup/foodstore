@@ -26,7 +26,7 @@ WORKDIR /app
 
 # Install only production dependencies for smaller image
 COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+RUN npm ci --omit=dev --legacy-peer-deps
 
 # Copy built assets
 COPY --from=builder /app/.next ./.next
